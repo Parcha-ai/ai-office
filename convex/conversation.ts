@@ -8,6 +8,17 @@ import { Message } from './schema';
 type Player = { id: Id<'players'>; name: string; identity: string };
 type Relation = Player & { relationship?: string };
 
+
+const scriptWriter: LLMMessage =  {
+  role: 'system',
+  content: "You are the script-writer for the hit US TV show The Office. In this version of The Office you write the script by playing out the characters in a simulated world should say. The user will provide context on the character you are going to play and you should pick the appropriate thing for that character say next but ONLY THAT CHARACTER. Be as accurate to the characters manarisms and style of speaking as possible. Remember you're writing for the office so it should be funny and in the style of the show. Always optimize for the next step that would be most funny/interesting. Be creative and introduce plot points too where it needed, you can't include action lines though and you should think about not just the character you are playing but what the previous character has said too. You CANNOT include subtext"
+}
+
+const showRunner: LLMMessage =  {
+  role: 'system',
+  content: "You are the showrunner for the hit US TV show The Office. In this version of The Office you write the script by deciding what the characters in a simulated world should do. The user will provide context on the situation. Remember you're writing for the office so it should be funny and in the style of the show. Always optimize for the next step that would be most funny/interesting. Be creative and introduce plot points too where it needed, you can't include action lines though and you should think about not just the character you are playing but what the previous character has said too. Get characters to talk to each other to make funny things happen"
+}
+
 export async function startConversation(
   ctx: ActionCtx,
   audience: Relation[],
@@ -25,11 +36,13 @@ export async function startConversation(
 
   const convoMemories = filterMemoriesType(['conversation'], memories);
 
+
   const prompt: LLMMessage[] = [
+    scriptWriter,
     {
       role: 'user',
       content:
-        `You are ${player.name}. You just saw ${newFriendsNames}. You should greet them and start a conversation with them. Below are some of your memories about ${newFriendsNames}:` +
+        `You are ${player.name}. You just saw ${newFriendsNames}. You should greet them and start a conversation with them in the style of the character in the office. Make the it funny like the show. Below are some of your memories about ${newFriendsNames}:` +
         audience
           .filter((r) => r.relationship)
           .map((r) => `Relationship with ${r.name}: ${r.relationship}`)
@@ -39,7 +52,7 @@ export async function startConversation(
     },
   ];
   const stop = stopWords(newFriendsNames);
-  const { content } = await chatCompletion({ messages: prompt, max_tokens: 300, stop });
+  const { content } = await chatCompletion({ messages: prompt, max_tokens: 300, stop, model: "gpt-3.5-turbo-16k" });
   return { content: trimContent(content, stop), memoryIds: memories.map((m) => m.memory._id) };
 }
 
@@ -105,6 +118,7 @@ export async function decideWhoSpeaksNext(
   Return in JSON format, example: {"name": "Alex", id: "1234"}
   ${chatHistory.map((m) => m.content).join('\n')}`;
   const prompt: LLMMessage[] = [
+    showRunner,
     {
       role: 'user',
       content: promptStr,
@@ -169,6 +183,7 @@ export async function converse(
     'Below are the current chat history between you and the other folks mentioned above. DO NOT greet the other people more than once. Only greet ONCE. Do not use the word Hey too often. Response should be brief and within 200 characters: \n';
 
   const prompt: LLMMessage[] = [
+    scriptWriter,
     {
       role: 'user',
       content: prefixPrompt,
@@ -180,14 +195,16 @@ export async function converse(
     },
   ];
   const stop = stopWords(nearbyPlayers.map((p) => p.name));
-  const { content } = await chatCompletion({ messages: prompt, max_tokens: 300, stop });
+  const { content } = await chatCompletion({ messages: prompt, max_tokens: 300, stop, model: "gpt-4"  });
   // console.debug('converse result through chatgpt: ', content);
   return { content: trimContent(content, stop), memoryIds: memories.map((m) => m.memory._id) };
 }
 
 export async function walkAway(messages: LLMMessage[], player: Player): Promise<boolean> {
   const prompt: LLMMessage[] = [
+    showRunner,
     {
+      
       role: 'user',
       content: `Below is a chat history among a few people who ran into each other. You are ${player.name}. You want to conclude this conversation when you think it's time to go.
 
