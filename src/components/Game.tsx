@@ -54,8 +54,11 @@ export const Game = ({
       </Sound>
     </div>
   );
+
 };
 export default Game;
+
+
 
 /**
  * Calculates the time delta between the server's clock and ours, from
