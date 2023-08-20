@@ -25,7 +25,7 @@ const PixiViewportComponent = PixiComponent('Viewport', {
       .clamp({ direction: 'all', underflow: 'center' })
       .clampZoom({
         minWidth: 50,
-        maxWidth: 550,
+        maxWidth: 800,
       });
 
     return viewport;

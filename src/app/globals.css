@@ -24,7 +24,7 @@ body {
 
 .game-background {
   background: linear-gradient(rgba(41, 41, 41, 0.8), rgba(41, 41, 41, 0.8)),
-    url(../../assets/background.webp);
+    url(../../assets/office-animation-bg.png);
   background-blend-mode: hard-light;
   background-position: center;
   background-repeat: no-repeat;
@@ -33,11 +33,11 @@ body {
 }
 
 .game-title {
-  background: linear-gradient(to bottom, #fec742, #dd7c42);
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0px 0.08em 0px #6e2146);
+  filter: drop-shadow(0px 0.08em 0px #0c0c0c);
 }
 
 .game-frame {

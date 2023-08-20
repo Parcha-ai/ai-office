@@ -55,14 +55,14 @@ export default function PlayerDetails({ playerId }: { playerId: Id<'players'> })
   return (
     playerState && (
       <>
-        <div className="box">
-          <h2 className="bg-brown-700 p-2 font-display text-4xl tracking-wider shadow-solid text-center">
+        <div >
+          <h2 className=" p-2 text-yellow font-display text-4xl tracking-wider shadow-solid text-center">
             {playerState.name}
           </h2>
         </div>
 
         <div className="desc my-6">
-          <p className="leading-tight -m-4 bg-brown-700 text-lg">{playerState.identity}</p>
+          <p className="leading-tight -m-4 bg-white text-lg text-black">{playerState.identity}</p>
         </div>
 
         {/*

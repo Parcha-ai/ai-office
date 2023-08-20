@@ -1,9 +1,23 @@
+'use client';
 import { SignedIn, SignedOut, UserButton, auth } from '@clerk/nextjs';
 import GameWrapper from '@/components/GameWrapper';
 import FreezeButton from '@/components/FreezeButton';
+import PlayerButton from '@/components/PlayerButton';
 import LoginButton from '@/components/LoginButton';
+import { useState } from 'react';
+import { ConvexProvider, useConvex, useMutation, useQuery } from 'convex/react';
+import { Id } from '../../convex/_generated/dataModel';
+import { api } from '../../convex/_generated/api';
+
+
 
 export default function Home() {
+  const [selectedPlayer, setSelectedPlayer] = useState<Id<'players'>>();
+  const worldState = useQuery(api.players.getWorld, {});
+  if (!worldState) return null;
+  const { players } = worldState;
+
+
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-between font-body game-background">
       <div className="p-6 absolute top-0 right-0 z-10 text-2xl">
@@ -26,24 +40,16 @@ export default function Home() {
           A virtual office with some familiar characters...
         </p>
 
-        <GameWrapper />
+        <GameWrapper selectedPlayer={selectedPlayer} setSelectedPlayer={setSelectedPlayer} />
 
         <footer className="absolute bottom-0 left-0 w-full flex items-center mt-4 gap-6 p-6 flex-wrap pointer-events-none">
-          <div className="flex gap-4 flex-grow pointer-events-none">
-            <FreezeButton />
-            <a
-              className="button text-white shadow-solid text-2xl pointer-events-auto"
-              href="https://github.com/parcha-ai/ai-office"
-            >
-              <div className="inline-block bg-clay-700">
-                <span>
-                  <div className="inline-flex items-center gap-4">
-                    <img className="w-6 h-6" src="/assets/star.svg" />
-                    Star
-                  </div>
-                </span>
-              </div>
-            </a>
+          <div className="flex gap-4 flex-grow pointer-events-none justify-center">
+            {players.map((player) => (
+              <PlayerButton 
+                player={player} selectPlayer={setSelectedPlayer}
+                />
+            ))}
+            
           </div>
         </footer>
       </div>

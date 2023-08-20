@@ -68,7 +68,7 @@ export const Descriptions = [
         description: 'You want to win Pam\'s heart and find a career that truly satisfies you.',
       },
     ],
-    position: { x: 12, y: 10 },
+    position: { x: 15, y: 10 },
   },
   {
     name: 'Pam',
@@ -93,7 +93,7 @@ export const Descriptions = [
         description: 'You want to build a life with Jim and pursue your passion for art.',
       },
     ],
-    position: { x: 6, y: 4 },
+    position: { x: 12, y: 12 },
   },
   {
     name: 'Dwight',
@@ -158,7 +158,7 @@ export const Descriptions = [
         description: 'You want to enjoy life to the fullest, especially when it comes to food.',
       },
     ],
-    position: { x: 4, y: 4 },
+    position: { x: 15, y: 15 },
   },
   {
     name: 'Toby',
@@ -183,7 +183,7 @@ export const Descriptions = [
         description: 'You want to be appreciated at work and find love.',
       },
     ],
-    position: { x: 2, y: 10 },
+    position: { x: 20, y: 15 },
   },
   {
     name: 'Stanley',
@@ -203,7 +203,7 @@ export const Descriptions = [
         description: 'You want to retire and enjoy your peace and quiet.',
       },
     ],
-    position: { x: 4, y: 10 },
+    position: { x: 10, y: 11 },
   },
 ];
 export const characters = [

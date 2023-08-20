@@ -1,49 +1,53 @@
-<!-- Based on Pixel Art GUI Elements by Mounir Tohami (https://mounirtohami.itch.io/pixel-art-gui-elements) -->
 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_15_980)">
-<rect x="4" y="2" width="42" height="46" fill="#B86F50"/>
-<rect x="2" y="4" width="46" height="42" fill="#B86F50"/>
-<rect x="3" y="3" width="44" height="44" fill="#B86F50"/>
-<rect x="4" y="4" width="42" height="42" fill="#743F39"/>
-<rect x="2" y="46" width="1" height="1" fill="#181425"/>
-<rect width="1" height="1" transform="matrix(1 0 0 -1 46 48)" fill="#181425"/>
-<rect width="1" height="1" transform="matrix(1 0 0 -1 2 4)" fill="#181425"/>
-<rect x="46" y="2" width="1" height="1" fill="#181425"/>
-<rect x="1" y="4" width="1" height="42" fill="#181425"/>
-<rect x="48" y="4" width="1" height="42" fill="#181425"/>
-<rect x="46" y="1" width="1" height="42" transform="rotate(90 46 1)" fill="#181425"/>
-<rect x="46" y="48" width="1" height="42" transform="rotate(90 46 48)" fill="#181425"/>
-<rect x="3" y="47" width="1" height="1" fill="#181425"/>
-<rect width="1" height="1" transform="matrix(1 0 0 -1 47 47)" fill="#181425"/>
-<rect width="1" height="1" transform="matrix(1 0 0 -1 3 3)" fill="#181425"/>
-<rect x="47" y="3" width="1" height="1" fill="#181425"/>
-<rect x="4" y="4" width="1" height="1" fill="#181425"/>
-<rect x="4" y="45" width="1" height="1" fill="#181425"/>
-<rect x="45" y="4" width="1" height="1" fill="#181425"/>
-<rect x="45" y="45" width="1" height="1" fill="#181425"/>
-<rect x="3" y="5" width="1" height="40" fill="#181425"/>
-<rect x="46" y="5" width="1" height="40" fill="#181425"/>
-<rect x="45" y="46" width="1" height="40" transform="rotate(90 45 46)" fill="#181425"/>
-<rect x="45" y="3" width="1" height="40" transform="rotate(90 45 3)" fill="#181425"/>
-<rect x="10" y="45" width="3" height="5" fill="#181425"/>
-<rect x="11" y="46" width="1" height="3" fill="#B86F50"/>
-<rect x="10" width="3" height="5" fill="#181425"/>
-<rect x="11" y="1" width="1" height="3" fill="#B86F50"/>
-<rect x="37" width="3" height="5" fill="#181425"/>
-<rect x="38" y="1" width="1" height="3" fill="#B86F50"/>
-<rect x="37" y="45" width="3" height="5" fill="#181425"/>
-<rect x="38" y="46" width="1" height="3" fill="#B86F50"/>
-<rect x="5" y="10" width="3" height="5" transform="rotate(90 5 10)" fill="#181425"/>
-<rect x="4" y="11" width="1" height="3" transform="rotate(90 4 11)" fill="#B86F50"/>
-<rect x="50" y="10" width="3" height="5" transform="rotate(90 50 10)" fill="#181425"/>
-<rect x="49" y="11" width="1" height="3" transform="rotate(90 49 11)" fill="#B86F50"/>
-<rect x="50" y="37" width="3" height="5" transform="rotate(90 50 37)" fill="#181425"/>
-<rect x="49" y="38" width="1" height="3" transform="rotate(90 49 38)" fill="#B86F50"/>
-<rect x="5" y="37" width="3" height="5" transform="rotate(90 5 37)" fill="#181425"/>
-<rect x="4" y="38" width="1" height="3" transform="rotate(90 4 38)" fill="#B86F50"/>
+<g clip-path="url(#clip0_2_41)">
+<mask id="mask0_2_41" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
+<path d="M50 0H0V50H50V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2_41)">
+<path d="M46 2H4V48H46V2Z" fill="#C0CBDC"/>
+<path d="M48 4H2V46H48V4Z" fill="#C0CBDC"/>
+<path d="M47 3H3V47H47V3Z" fill="#C0CBDC"/>
+<path d="M46 4H4V46H46V4Z" fill="white"/>
+<path d="M3 46H2V47H3V46Z" fill="#181425"/>
+<path d="M47 48H46V47H47V48Z" fill="#181425"/>
+<path d="M3 4H2V3H3V4Z" fill="#181425"/>
+<path d="M47 2H46V3H47V2Z" fill="#181425"/>
+<path d="M2 4H1V46H2V4Z" fill="#181425"/>
+<path d="M49 4H48V46H49V4Z" fill="#181425"/>
+<path d="M46 2V1L4 1V2L46 2Z" fill="#181425"/>
+<path d="M46 49V48H4V49H46Z" fill="#181425"/>
+<path d="M4 47H3V48H4V47Z" fill="#181425"/>
+<path d="M48 47H47V46H48V47Z" fill="#181425"/>
+<path d="M4 3H3V2H4V3Z" fill="#181425"/>
+<path d="M48 3H47V4H48V3Z" fill="#181425"/>
+<path d="M5 4H4V5H5V4Z" fill="#181425"/>
+<path d="M5 45H4V46H5V45Z" fill="#181425"/>
+<path d="M46 4H45V5H46V4Z" fill="#181425"/>
+<path d="M46 45H45V46H46V45Z" fill="#181425"/>
+<path d="M4 5H3V45H4V5Z" fill="#181425"/>
+<path d="M47 5H46V45H47V5Z" fill="#181425"/>
+<path d="M45 47V46H5V47H45Z" fill="#181425"/>
+<path d="M45 4V3L5 3V4L45 4Z" fill="#181425"/>
+<path d="M13 45H10V50H13V45Z" fill="#181425"/>
+<path d="M12 46H11V49H12V46Z" fill="#C0CBDC"/>
+<path d="M13 0H10V5H13V0Z" fill="#181425"/>
+<path d="M12 1H11V4H12V1Z" fill="#C0CBDC"/>
+<path d="M40 0H37V5H40V0Z" fill="#181425"/>
+<path d="M39 1H38V4H39V1Z" fill="#C0CBDC"/>
+<path d="M40 45H37V50H40V45Z" fill="#181425"/>
+<path d="M39 46H38V49H39V46Z" fill="#C0CBDC"/>
+<path d="M5 13V10H0V13H5Z" fill="#181425"/>
+<path d="M4 12V11H1V12H4Z" fill="#C0CBDC"/>
+<path d="M50 13V10H45V13H50Z" fill="#181425"/>
+<path d="M49 12V11H46V12H49Z" fill="#C0CBDC"/>
+<path d="M50 40V37H45V40H50Z" fill="#181425"/>
+<path d="M49 39V38H46V39H49Z" fill="#C0CBDC"/>
+<path d="M5 40V37H0V40H5Z" fill="#181425"/>
+<path d="M4 39V38H1V39H4Z" fill="#C0CBDC"/>
+</g>
 </g>
 <defs>
-<clipPath id="clip0_15_980">
+<clipPath id="clip0_2_41">
 <rect width="50" height="50" fill="white"/>
 </clipPath>
 </defs>

@@ -1,5 +1,5 @@
 import { Stage } from '@pixi/react';
-import { useEffect, useRef, useState } from 'react';
+import { Ref, RefObject, useEffect, useRef, useState } from 'react';
 import { PixiStaticMap } from './PixiStaticMap';
 import { ConvexProvider, useConvex, useMutation, useQuery } from 'convex/react';
 import { api } from '../../convex/_generated/api';
@@ -7,6 +7,10 @@ import { Player, SelectPlayer } from './Player';
 import { HEARTBEAT_PERIOD } from '../../convex/config';
 import { Id } from '../../convex/_generated/dataModel';
 import dynamic from 'next/dynamic';
+import { Viewport } from 'next/dist/lib/metadata/types/extra-types';
+import { createContext, useContext } from 'react';
+
+export const ViewportContext = createContext<RefObject<Viewport> | null>(null);
 
 // Disabling SSR for these since they don't work server side.
 const PixiViewport = dynamic(() => import('./PixiViewport'), { ssr: false });
@@ -14,23 +18,29 @@ const Sound = dynamic(() => import('./Sound'), { ssr: false });
 
 export const Game = ({
   setSelectedPlayer,
+  selectedPlayer,
   width,
   height,
 }: {
   setSelectedPlayer: SelectPlayer;
+  selectedPlayer: Id<'players'> | undefined;
   width: number;
   height: number;
 }) => {
+
   const convex = useConvex();
   const worldState = useQuery(api.players.getWorld, {});
-
+  const viewportRef = useRef<Viewport>(null);
   const offset = useServerTimeOffset(worldState?.world._id);
   if (!worldState) return null;
   const { players } = worldState;
+
   return (
+    <ViewportContext.Provider value={viewportRef}>
+
     <div className="container">
       <Sound>
-        <Stage width={width} height={height} options={{ backgroundColor: 0x7ab5ff }}>
+        <Stage width={width} height={height} options={{ backgroundColor: 0x000000 }}>
           <PixiViewport
             screenWidth={width}
             screenHeight={height}
@@ -53,6 +63,8 @@ export const Game = ({
         </Stage>
       </Sound>
     </div>
+     
+  </ViewportContext.Provider>
   );
 
 };

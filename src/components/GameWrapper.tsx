@@ -1,14 +1,21 @@
 'use client';
-import { useState } from 'react';
 import PlayerDetails from './PlayerDetails';
 import Game from './Game';
-
 import { useElementSize } from 'usehooks-ts';
+import { SelectPlayer } from './Player';
 import { Id } from '../../convex/_generated/dataModel';
 
-export default function GameWrapper() {
-  const [selectedPlayer, setSelectedPlayer] = useState<Id<'players'>>();
 
+
+export default function GameWrapper({
+  selectedPlayer, 
+  setSelectedPlayer
+}:{
+  selectedPlayer: Id<'players'> | undefined;
+  setSelectedPlayer:SelectPlayer;
+}
+  ) {
+  
   const [gameWrapperRef, { width, height }] = useElementSize();
 
   return (
@@ -16,17 +23,17 @@ export default function GameWrapper() {
       {/* Game area */}
       <div className="relative overflow-hidden bg-brown-900" ref={gameWrapperRef}>
         <div className="absolute inset-0">
-          <Game width={width} height={height} setSelectedPlayer={setSelectedPlayer} />
+          <Game width={width} height={height} selectedPlayer={selectedPlayer} setSelectedPlayer={setSelectedPlayer} />
         </div>
       </div>
 
       {/* Right column area */}
-      <div className="flex flex-col overflow-y-auto shrink-0 px-4 py-6 sm:px-6 lg:w-96 xl:pr-6 bg-brown-800 text-brown-100">
+      <div className="flex flex-col overflow-y-auto shrink-0 px-4 py-6 sm:px-6 lg:w-96 xl:pr-6 bg-brown-300 text-brown-100">
         {selectedPlayer ? (
           <PlayerDetails playerId={selectedPlayer} />
         ) : (
           <div className="h-full text-xl flex text-center items-center p-4">
-            Click on an agent on the map to see chat history.
+            Click on a character on the map or use the buttons to see chat history.
           </div>
         )}
       </div>

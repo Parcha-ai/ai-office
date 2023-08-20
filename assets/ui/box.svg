@@ -1,14 +1,18 @@
-<!-- Based on Pixel Art GUI Elements by Mounir Tohami (https://mounirtohami.itch.io/pixel-art-gui-elements) -->
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_15_858)">
-<rect x="1" width="14" height="16" fill="#181425"/>
-<rect y="1" width="16" height="14" fill="#181425"/>
-<rect x="1" y="1" width="14" height="14" fill="#743F39"/>
-<rect x="1" y="14" width="14" height="1" fill="#3F2832"/>
-<rect x="1" y="1" width="14" height="1" fill="#B86F50"/>
+<g clip-path="url(#clip0_2_163)">
+<mask id="mask0_2_163" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+<path d="M16 0H0V16H16V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2_163)">
+<path d="M15 0H1V16H15V0Z" fill="#181425"/>
+<path d="M16 1H0V15H16V1Z" fill="#181425"/>
+<path d="M15 1H1V15H15V1Z" fill="#C0CBDC"/>
+<path d="M15 14H1V15H15V14Z" fill="#8B919B"/>
+<path d="M15 1H1V2H15V1Z" fill="#DDEAFF"/>
+</g>
 </g>
 <defs>
-<clipPath id="clip0_15_858">
+<clipPath id="clip0_2_163">
 <rect width="16" height="16" fill="white"/>
 </clipPath>
 </defs>

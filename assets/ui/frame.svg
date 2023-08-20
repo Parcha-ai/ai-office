@@ -1,12 +1,11 @@
-<!-- Based on Pixel Art GUI Elements by Mounir Tohami (https://mounirtohami.itch.io/pixel-art-gui-elements) -->
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="1" y="6" width="22" height="17" fill="#181425"/>
-<rect width="24" height="6" fill="#181425"/>
-<rect x="2" y="6" width="20" height="16" fill="#743F39"/>
-<rect x="3" y="6" width="18" height="15" fill="#B86F50"/>
-<rect x="4" y="6" width="16" height="14" fill="#743F39"/>
-<rect x="5" y="6" width="14" height="13" fill="#181425"/>
-<rect x="1" y="1" width="22" height="4" fill="#3F2832"/>
-<rect x="1" y="1" width="22" height="1" fill="#B86F50"/>
-<rect x="1" y="2" width="22" height="2" fill="#743F39"/>
+<path d="M23 6H1V23H23V6Z" fill="#181425"/>
+<path d="M24 0H0V6H24V0Z" fill="#181425"/>
+<path d="M22 6H2V22H22V6Z" fill="#8B919B"/>
+<path d="M21 6H3V21H21V6Z" fill="#C0CBDC"/>
+<path d="M20 6H4V20H20V6Z" fill="#8B919B"/>
+<path d="M19 6H5V19H19V6Z" fill="#181425"/>
+<path d="M23 1H1V5H23V1Z" fill="#8B919B"/>
+<path d="M23 1H1V2H23V1Z" fill="#DCEAFF"/>
+<path d="M23 2H1V4H23V2Z" fill="#C0CBDC"/>
 </svg>
