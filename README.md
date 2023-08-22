@@ -4,7 +4,7 @@
 
 <img width="1454" alt="AI Office" src="https://github.com/Parcha-ai/ai-office/blob/91468d9bd30fc7db150fb379f74470488bcca444/public/assets/thumbnail.jpg">
 
-AI Office was created by [Parcha](https://parcha.ai) and is a fork of [AI Town](https://github.com/a16z/ai-infra/ai-town) which A16z originally released to make it easier to build AI Simulations. What follows below is the original Readme from that Repo with some edits specific to AI Office.
+AI Office was created by [Parcha](https://parcha.ai) and is a fork of [AI Town](https://github.com/a16z/ai-infra/ai-town) by A16z. What follows below is the original Readme from that Repo with some edits specific to AI Office.
 
 AI Town is a virtual town where AI characters live, chat and socialize.
 
