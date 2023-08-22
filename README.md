@@ -1,8 +1,8 @@
 # AI Town 🏠💻💌
 
-[Live Demo](https://www.convex.dev/ai-town)
+[Live Demo](https://ai-office.fly.dev)
 
-<img width="1454" alt="Screen Shot 2023-08-14 at 10 01 00 AM" src="https://github.com/parcha-ai/ai-office/public/assets/thumbnail.jpg">
+<img width="1454" alt="AI Office" src="https://github.com/parcha-ai/ai-office/public/assets/thumbnail.jpg">
 
 AI Office was created by [Parcha](https://parcha.ai) and is a fork of [AI Town](https://github.com/a16z/ai-infra/ai-town) which A16z originally released to make it easier to build AI Simulations. What follows below is the original Readme from that Repo with some minor edits.
 
