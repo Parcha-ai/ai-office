@@ -4,8 +4,9 @@
 
 [Join our community Discord: AI Stack Devs](https://discord.gg/PQUmTBTGmT)
 
-<img width="1454" alt="Screen Shot 2023-08-14 at 10 01 00 AM" src="https://github.com/a16z-infra/ai-town/assets/3489963/a4c91f17-23ed-47ec-8c4e-9f9a8505057d">
+<img width="1454" alt="Screen Shot 2023-08-14 at 10 01 00 AM" src="https://github.com/parcha-ai/ai-office/public/assets/thumbnail.jpg">
 
+AI Office is a fork of [AI Town](https://github.com/a16z/ai-infra/ai-town) by A16z. What follows below is the original Readme from that Repo with some minor edits.
 
 AI Town is a virtual town where AI characters live, chat and socialize.
 
@@ -224,13 +225,14 @@ RUN npm run build
 ## Customize your own simulation
 NOTE: every time you change character data, you should re-run `npx convex run testing:debugClearAll --no-push` and then `npm run dev` to re-upload everything to Convex. This is because character data is sent to Convex on the initial load. However, beware that `npx convex run testing:debugClearAll --no-push` WILL wipe all of your data, including your vector store.
 
-1. Create your own characters and stories: All characters and stories, as well as their spritesheet references are stored in [data.ts](./convex/characterdata/data.ts#L4). You can start by changing character descriptions.
+1. Create your own characters and stories: All characters and stories, as well as their spritesheet references are stored in [data.ts](./convex/characterdata/data.ts#L4). You can start by changing character descriptions. You can also change the system descriptions which were added for AI Office specifically to get the characters appear to be more like The Office TV show, which are defined in [conversations.ts](.convex/conversation.ts).
+
 2. Updating spritesheets: in `data.ts`, you will see this code:
 
 ```export const characters = [
   {
     name: 'f1',
-    textureUrl: '/assets/32x32folk.png',
+    textureUrl: '/assets/OfficeSpriteSet.png',
     spritesheetData: f1SpritesheetData,
     speed: 0.1,
   },...
@@ -239,13 +241,10 @@ NOTE: every time you change character data, you should re-run `npx convex run te
 You should find a sprite sheet for your character, and define sprite motion / assets in the corresponding file (in the above example, `f1SpritesheetData` was defined in f1.ts)
 
 
-3. Update the background (environment): `convex/maps/firstmap.ts` is where the map gets loaded. The easiest way to export a tilemap is by using [Tiled](https://www.mapeditor.org/) -- Tiled exports tilemaps as a CSV and you can convert CSV to a 2d array accepted by firstmap.ts
+3. Update the background (environment): `convex/maps/firstmap.ts` is where the map gets loaded. The easiest way to export a tilemap is by using [Tiled](https://www.mapeditor.org/) -- Tiled exports tilemaps as a CSV and you can convert CSV to a 2d array accepted by firstmap.ts. Note that in AI Office, we cheated and just generated the whole background from MidJourney as a [tilesheet](./public/assets/rpg-tileset.png) and then mapped each tile 1-1 to the tilemap using a simple array generator. 
+
+4. Update the object map:`convex/maps/firstmap.ts` is also where the object map is defined. The object map is also a tilemap but it specificies which tiles a character can/can't walk on. If you change the main map, you should update the object map too.
 
 ## Credits
-- All interactions, background music and rendering on the <Game/> component in the project are powered by [PixiJS](https://pixijs.com/). 
-- Tilesheet:
-    - https://opengameart.org/content/16x16-game-assets by George Bailey
-    - https://opengameart.org/content/16x16-rpg-tileset by hilau
-- We used https://github.com/pierpo/phaser3-simple-rpg for the original POC of this project. We have since re-wrote the whole app, but appreciated the easy starting point
-- Original assets by [ansimuz](https://opengameart.org/content/tiny-rpg-forest)
-- The UI is based on original assets by [Mounir Tohami](https://mounirtohami.itch.io/pixel-art-gui-elements)
+- This project is a fork of [AI Town](https://github.com/a16z/ai-infra/ai-town) by A16z. 
+- The Office character sprites were created by [Arin Sprite](https://www.fiverr.com/archinversion)

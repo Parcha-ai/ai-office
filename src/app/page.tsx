@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { ConvexProvider, useConvex, useMutation, useQuery } from 'convex/react';
 import { Id } from '../../convex/_generated/dataModel';
 import { api } from '../../convex/_generated/api';
+import Head from 'next/head';
 
 
 
@@ -19,17 +20,12 @@ export default function Home() {
 
 
   return (
+<>
+    <Head>
+      <meta property="og:image" content="/thumbnail.jpg" />
+    </Head>
     <main className="relative flex min-h-screen flex-col items-center justify-between font-body game-background">
-      <div className="p-6 absolute top-0 right-0 z-10 text-2xl">
-        <SignedIn>
-          <UserButton afterSignOutUrl="/" />
-        </SignedIn>
 
-        <SignedOut>
-          <LoginButton />
-        </SignedOut>
-        
-      </div>
 
       <div className="w-full min-h-screen relative isolate overflow-hidden p-6 lg:p-8 shadow-2xl flex flex-col justify-center">
         <h1 className="mx-auto text-center text-6xl sm:text-7xl lg:text-8xl font-bold font-display leading-none tracking-wide game-title">
@@ -37,7 +33,7 @@ export default function Home() {
         </h1>
 
         <p className="mx-auto my-4 text-center text-xl sm:text-2xl text-white leading-tight shadow-solid">
-          A virtual office with some familiar digital employees...
+          A virtual office with some familiar AI employees...
         </p>
 
         <GameWrapper selectedPlayer={selectedPlayer} setSelectedPlayer={setSelectedPlayer} />
@@ -63,5 +59,6 @@ export default function Home() {
         </footer>
       </div>
     </main>
+    </>
   );
 }

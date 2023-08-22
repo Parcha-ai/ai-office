@@ -70,7 +70,7 @@ export default function PlayerDetails({ playerId }: { playerId: Id<'players'> })
       but it’s not a priority at the moment since logged in users don’t really
       get special permissions.
       */}
-        <SignedIn>
+
           {playerState.lastChat?.conversationId && (
             <div className="chats">
               <div className="bg-brown-200 text-black p-2">
@@ -81,19 +81,7 @@ export default function PlayerDetails({ playerId }: { playerId: Id<'players'> })
               </div>
             </div>
           )}
-        </SignedIn>
 
-        <SignedOut>
-          <div className="login-prompt">
-            <div className="bg-clay-300 text-clay-900 -m-6">
-              <p className="text-center">You need to be logged in to read the conversations.</p>
-
-              <div className="text-center mt-4 text-xl">
-                <LoginButton />
-              </div>
-            </div>
-          </div>
-        </SignedOut>
       </>
     )
   );
