@@ -1,12 +1,10 @@
 # AI Town 🏠💻💌
 
-[Live Demo](https://www.convex.dev/ai-town)
+[Live Demo](https://ai-office.fly.dev)
 
-[Join our community Discord: AI Stack Devs](https://discord.gg/PQUmTBTGmT)
+<img width="1454" alt="AI Office" src="./assets/thumbnail.jpg">
 
-<img width="1454" alt="Screen Shot 2023-08-14 at 10 01 00 AM" src="https://github.com/parcha-ai/ai-office/public/assets/thumbnail.jpg">
-
-AI Office is a fork of [AI Town](https://github.com/a16z/ai-infra/ai-town) by A16z. What follows below is the original Readme from that Repo with some minor edits.
+AI Office was created by [Parcha](https://parcha.ai) and is a fork of [AI Town](https://github.com/a16z/ai-infra/ai-town) which A16z originally released to make it easier to build AI Simulations. What follows below is the original Readme from that Repo with some edits specific to AI Office.
 
 AI Town is a virtual town where AI characters live, chat and socialize.
 
