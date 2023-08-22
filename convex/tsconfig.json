@@ -16,7 +16,8 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "sourceMap": true
   },
   "include": ["./**/*"],
   "exclude": ["./_generated"]

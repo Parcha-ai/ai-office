@@ -16,9 +16,11 @@ import { Pose } from '../../convex/schema';
 export default function PlayerButton(
   { player, 
     selectPlayer,
+    selectedPlayer,
   }:{
     player: Doc<'players'>;
     selectPlayer: SelectPlayer;
+    selectedPlayer: Id<'players'> | undefined;
   }) {
   const playerState = useQuery(api.players.playerState, {
     playerId: player._id,
@@ -39,13 +41,14 @@ export default function PlayerButton(
   return (
     <>
       <a
-        className="button text-white shadow-solid text-2xl pointer-events-auto"
+        className={`button text-white shadow-solid text-2xl pointer-events-auto ${selectedPlayer === playerState?.id? 'active' : ''}`}
         onClick={handleClick}
         title="Click on a character to see what they have been talking about."
       >
         <div className="inline-block bg-clay-700">
           <span>
-            <div className="inline-flex items-center gap-4">
+            <div className="inline-flex items-center gap-2">
+            <img className="w-8 h-8" src={`/assets/${playerState?.name}_button.svg`} />
             {playerState?.name}
             </div>
           </span>
