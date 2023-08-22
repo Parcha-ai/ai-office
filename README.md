@@ -2,7 +2,7 @@
 
 [Live Demo](https://ai-office.fly.dev)
 
-
+![Thumbnail](./assets/thumbnail.jpg)
 
 AI Office was created by [Parcha](https://parcha.ai) and is a fork of [AI Town](https://github.com/a16z/ai-infra/ai-town) which A16z originally released to make it easier to build AI Simulations. What follows below is the original Readme from that Repo with some minor edits.
 
