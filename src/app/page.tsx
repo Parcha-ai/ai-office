@@ -21,9 +21,7 @@ export default function Home() {
 
   return (
 <>
-    <Head>
-      <meta property="og:image" content="/thumbnail.jpg" />
-    </Head>
+    
     <main className="relative flex min-h-screen flex-col items-center justify-between font-body game-background">
 
 
@@ -53,7 +51,7 @@ export default function Home() {
             <p>Inspired by <a href="https://" style={{pointerEvents: "auto"}}>AI Town</a> by A16z</p>
           </div>
           < div className="mx-auto my-4 text-center text-xl sm:text-1xl text-white leading-tight shadow-solid">
-            <p>Need some more competent AI to help scale your business? 👉 Try <a className="text-underline" href="https://github.com/a16z-infra/ai-town" style={{pointerEvents: "auto"}}>Parcha.ai</a></p>
+            <p>Want to see how real AI Agents can scale your business? 👉 Try <a className="text-underline" href="https://github.com/a16z-infra/ai-town" style={{pointerEvents: "auto"}}>Parcha.ai</a></p>
           </div>
           </div> 
         </footer>

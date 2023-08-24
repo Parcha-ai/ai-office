@@ -52,7 +52,7 @@ export async function startConversation(
     },
   ];
   const stop = stopWords(newFriendsNames);
-  const { content } = await chatCompletion({ messages: prompt, max_tokens: 300, stop, model: "gpt-3.5-turbo-16k" });
+  const { content } = await chatCompletion({ messages: prompt, max_tokens: 300, stop});
   return { content: trimContent(content, stop), memoryIds: memories.map((m) => m.memory._id) };
 }
 
@@ -195,7 +195,7 @@ export async function converse(
     },
   ];
   const stop = stopWords(nearbyPlayers.map((p) => p.name));
-  const { content } = await chatCompletion({ messages: prompt, max_tokens: 300, stop, model: "gpt-4"  });
+  const { content } = await chatCompletion({ messages: prompt, max_tokens: 300, stop});
   // console.debug('converse result through chatgpt: ', content);
   return { content: trimContent(content, stop), memoryIds: memories.map((m) => m.memory._id) };
 }
